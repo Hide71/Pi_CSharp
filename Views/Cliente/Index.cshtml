@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"]="Cadastro de clientes";
+}
+<div class= "text-center">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class= "btn btn-primary" role="button" asp-controller="Cliente" asp-action="Add">Adicionar</a>
+    </div>
+    <h1 class="display-4">Lista de Clientes</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">Cpf</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Rua 5, numero8</td>
+      <td>12345678</td>
+      <td>56782345</td>
+      <td>
+        <div>
+            <a role="button" class="btn btn-success" asp-controller= "Cliente" asp-action= "Edit">Editar</a>
+            <a role="button" class= "btn btn-danger" asp-controller= "Cliente" asp-action= "Delete">Excluir</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+       <td>Rua 5, numero8</td>
+      <td>12345678</td>
+      <td>56782345</td>
+      <td>
+        <div>
+            <a role="button" class="btn btn-success" asp-controller= "Cliente" asp-action= "Edit">Editar</a>
+            <a role="button" class= "btn btn-danger"asp-controller= "Cliente" asp-action= "Delete">Excluir</a>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td >Larry</td>
+      <td>Rua 51, numero 18</td>
+      <td>12345678</td>
+      <td>56782345</td>
+      <td>
+        <div >
+            <a role="button" class="btn btn-success" asp-controller= "Cliente" asp-action= "Edit">Editar</a>
+            <a role="button" class= "btn btn-danger"asp-controller= "Cliente" asp-action= "Delete">Excluir</a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
