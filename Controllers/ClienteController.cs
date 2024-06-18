@@ -15,7 +15,8 @@ namespace Pi_CSharp.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+           List<ClienteModel> clientes = _clienteRepositorio.BuscarTodos();
+            return View(clientes);
         }
 
         public IActionResult Add()

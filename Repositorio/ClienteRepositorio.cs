@@ -12,6 +12,9 @@ namespace Pi_CSharp.Repositorio{
             _appDbContext = appDbContext;
             
         }
+         public List<ClienteModel> BuscarTodos(){
+            return _appDbContext.Clientes.ToList();
+         }
 
         public ClienteModel Adicionar(ClienteModel cliente){
             _appDbContext.Clientes.Add(cliente);
@@ -19,5 +22,6 @@ namespace Pi_CSharp.Repositorio{
                  return cliente;
             
         }
+        
     }
 }
