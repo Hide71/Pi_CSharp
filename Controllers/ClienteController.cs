@@ -3,6 +3,7 @@ using System.Diagnostics;
 using Pi_CSharp.Repositorio;
 using Pi_CSharp.Models;
 
+
 namespace Pi_CSharp.Controllers
 {
     public class ClienteController : Controller
@@ -24,9 +25,10 @@ namespace Pi_CSharp.Controllers
             return View();
         }
 
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
-            return View();
+            ClienteModel cliente = _clienteRepositorio.ListById(id);
+            return View(cliente);
         }
 
         public IActionResult Delete()

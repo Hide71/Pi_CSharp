@@ -11,10 +11,12 @@ namespace Pi_CSharp
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            var connectionString = "Server=localhost;Port=3306;Database=Eder_BarberShop;Uid=root;Pwd=root";
-            var serverVersion = new MySqlServerVersion(new Version(8, 0,38));
+            //var connectionString = "Server=localhost;Port=3306;Database=Eder_BarberShop;Uid=root;Pwd=root";
+            //var serverVersion = new MySqlServerVersion(new Version(8, 0,38));
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<AppDbContext>(o => o.UseMySql(connectionString, serverVersion));
+            //builder.Services.AddDbContext<AppDbContext>(o => o.UseMySql(connectionString, serverVersion));
+            var connectionStringMySql = builder.Configuration.GetConnectionString("DataBase"); 
+            builder.Services.AddDbContext<AppDbContext>( x => x.UseMySql (connectionStringMySql, Microsoft.EntityFrameworkCore.MySqlServerVersion.Parse("8.0.38")));
             builder.Services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
 
             var app = builder.Build();

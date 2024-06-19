@@ -6,6 +6,7 @@ namespace Pi_CSharp.Repositorio{
     public interface IClienteRepositorio
 
     {
+        ClienteModel ListById(int id);
         List<ClienteModel> BuscarTodos();
         ClienteModel Adicionar(ClienteModel cliente);
     }

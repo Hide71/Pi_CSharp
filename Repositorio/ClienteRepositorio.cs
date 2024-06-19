@@ -12,6 +12,11 @@ namespace Pi_CSharp.Repositorio{
             _appDbContext = appDbContext;
             
         }
+         public ClienteModel ListById(int id){
+            return _appDbContext.Clientes.FirstOrDefault(x => x.Id == id);
+         }
+
+
          public List<ClienteModel> BuscarTodos(){
             return _appDbContext.Clientes.ToList();
          }
