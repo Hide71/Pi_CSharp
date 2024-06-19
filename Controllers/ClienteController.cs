@@ -31,13 +31,20 @@ namespace Pi_CSharp.Controllers
             return View(cliente);
         }
 
-        public IActionResult Delete()
+        public IActionResult Delete(int id)
         {
-            return View();
+            ClienteModel cliente = _clienteRepositorio.ListById(id);
+            return View(cliente);
         }
         [HttpPost]
         public IActionResult Add(ClienteModel cliente){
             _clienteRepositorio.Adicionar(cliente);
+            return RedirectToAction("index");  
+        }
+
+        [HttpPost]
+        public IActionResult Edit(ClienteModel cliente){
+            _clienteRepositorio.Editar(cliente);
             return RedirectToAction("index");  
         }
     }

@@ -9,5 +9,6 @@ namespace Pi_CSharp.Repositorio{
         ClienteModel ListById(int id);
         List<ClienteModel> BuscarTodos();
         ClienteModel Adicionar(ClienteModel cliente);
+        ClienteModel Editar(ClienteModel cliente);
     }
 }

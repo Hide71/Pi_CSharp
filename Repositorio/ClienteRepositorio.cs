@@ -27,6 +27,20 @@ namespace Pi_CSharp.Repositorio{
                  return cliente;
             
         }
+        public ClienteModel Editar(ClienteModel cliente){
+            ClienteModel clienteBd = ListById(cliente.Id);
+            if(clienteBd == null) 
+            throw new Exception("Erro ao editar cliente!");
+            clienteBd.Nome = cliente.Nome;
+            clienteBd.Endereco = cliente.Endereco;
+            clienteBd.Cpf = cliente.Cpf;
+            clienteBd.Telefone = cliente.Telefone;
+            clienteBd.Email = cliente.Email;
+
+            _appDbContext.Clientes.Update(clienteBd);
+            _appDbContext.SaveChanges();
+            return clienteBd;
+        }
         
     }
 }
