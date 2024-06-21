@@ -36,6 +36,11 @@ namespace Pi_CSharp.Controllers
             ClienteModel cliente = _clienteRepositorio.ListById(id);
             return View(cliente);
         }
+
+        public IActionResult Deletar(int id){
+            _clienteRepositorio.Deletar(id);
+            return RedirectToAction("index");
+        }    
         [HttpPost]
         public IActionResult Add(ClienteModel cliente){
             _clienteRepositorio.Adicionar(cliente);

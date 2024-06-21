@@ -6,4 +6,4 @@
     <h3>Deseja apagar(@Model.Nome)?</h3>
 </div>
 <a class= "btn btn-primary" roler="button" asp-controller= "Cliente" asp-action= "Index">Cancelar</a>
-<a class= "btn btn-danger" roler="button"  asp-controller= "Cliente" asp-action= "Deletar">Confirmar</a>
+<a class= "btn btn-danger" roler="button"  asp-route-id="@Model.Id" asp-controller= "Cliente" asp-action= "Deletar">Confirmar</a>

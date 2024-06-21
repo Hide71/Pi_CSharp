@@ -41,6 +41,13 @@ namespace Pi_CSharp.Repositorio{
             _appDbContext.SaveChanges();
             return clienteBd;
         }
-        
+         public bool Deletar(int id){
+             ClienteModel clienteBd = ListById(id);
+            if(clienteBd == null) 
+            throw new Exception("Erro ao Apagar cliente!");
+            _appDbContext.Clientes.Remove(clienteBd);
+            _appDbContext.SaveChanges();
+            return true;
+        }
     }
 }
