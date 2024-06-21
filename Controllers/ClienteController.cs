@@ -43,8 +43,12 @@ namespace Pi_CSharp.Controllers
         }    
         [HttpPost]
         public IActionResult Add(ClienteModel cliente){
-            _clienteRepositorio.Adicionar(cliente);
-            return RedirectToAction("index");  
+            if(ModelState.IsValid){
+                _clienteRepositorio.Adicionar(cliente);
+                return RedirectToAction("index");  
+
+            }    
+            return View(cliente);  
         }
 
         [HttpPost]
