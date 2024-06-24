@@ -53,8 +53,12 @@ namespace Pi_CSharp.Controllers
 
         [HttpPost]
         public IActionResult Edit(ClienteModel cliente){
-            _clienteRepositorio.Editar(cliente);
-            return RedirectToAction("index");  
+            if(ModelState.IsValid){
+
+                _clienteRepositorio.Editar(cliente);
+                return RedirectToAction("index");  
+            }
+            return View(cliente);
         }
     }
 }    
