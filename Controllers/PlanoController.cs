@@ -7,7 +7,7 @@ namespace Pi_CSharp.Controllers{
     public class PlanoController : Controller{
 
         private readonly IPlanoRepositorio _planoRepositorio;
-        
+
         public PlanoController(IPlanoRepositorio planoRepositorio){
             _planoRepositorio = planoRepositorio;
 
@@ -22,8 +22,9 @@ namespace Pi_CSharp.Controllers{
             return View();
         }  
 
-        public IActionResult Edit(){
-            return View();
+        public IActionResult Edit(int id){
+            PlanoModel plan = _planoRepositorio.ListById(id);
+            return View(plan);
         }  
 
         public IActionResult Delete(){
@@ -38,6 +39,14 @@ namespace Pi_CSharp.Controllers{
             }
             return View(plan);
         }
+        [HttpPost]
+        public IActionResult Edit(PlanoModel plan){
+            if(ModelState.IsValid){
+                _planoRepositorio.Editar(plan);
+                return RedirectToAction("index");
+            } 
+            return View(plan);   
+        }    
     }
 
 }

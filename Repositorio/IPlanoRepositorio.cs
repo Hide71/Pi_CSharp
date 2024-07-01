@@ -3,7 +3,12 @@ using System.Collections.Generic;
 
 namespace Pi_CSharp.Repositorio{
     public interface IPlanoRepositorio{
-        PlanoModel Adicionar(PlanoModel plan);
+        PlanoModel ListById(int id);
+
         List<PlanoModel> Todos();
+
+        PlanoModel Adicionar(PlanoModel plan);
+
+        PlanoModel Editar(PlanoModel plan);
     }
 }

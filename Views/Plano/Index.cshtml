@@ -10,6 +10,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th scope="col">#</th>
                 <th scope="col">Plano</th>
                 <th scope="col">Cortes</th>
                 <th scope="col"> Barbas</th>
@@ -20,13 +21,14 @@
             @if(Model != null && Model.Any()){
                 foreach(PlanoModel plan in Model){
             <tr>
+                <th scope="row">@plan.Id</th>
                 <td>@plan.Plano</td>
                 <td>@plan.Cortes</td>
                 <td>@plan.Barbas</td>
                 <td>@plan.Valor</td>
                 <td>
                   <div>
-                      <a role="button" class="btn btn-success" asp-controller="Plano" asp-action="Edit">Editar</a>
+                      <a role="button" class="btn btn-success" asp-route-id= "@plan.Id" asp-controller="Plano" asp-action="Edit">Editar</a>
                       <a role="button" class="btn btn-danger" asp-controller="Plano" asp-action="Delete">Excluir</a>
                   </div>
                 </td>
