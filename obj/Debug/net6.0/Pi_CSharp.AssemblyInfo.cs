@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pi_CSharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a71dfa1eb2303c5bde949e215b6e402284de46d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3946bdd20e3f1fa64e3574c0995a099838a21d6c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pi_CSharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pi_CSharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

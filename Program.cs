@@ -18,6 +18,7 @@ namespace Pi_CSharp
             var connectionStringMySql = builder.Configuration.GetConnectionString("DataBase"); 
             builder.Services.AddDbContext<AppDbContext>( x => x.UseMySql (connectionStringMySql, Microsoft.EntityFrameworkCore.MySqlServerVersion.Parse("8.0.38")));
             builder.Services.AddScoped<IClienteRepositorio, ClienteRepositorio>();
+            builder.Services.AddScoped<IPlanoRepositorio, PlanoRepositorio>();
 
             var app = builder.Build();
 

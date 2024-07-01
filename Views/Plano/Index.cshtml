@@ -1,0 +1,38 @@
+@model List<PlanoModel>
+@{
+    ViewData["Title"]= "Planos Cadastrados";
+}    
+<div class= "text-center">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class= "btn btn-primary" role="button" asp-controller="Plano" asp-action="Add">Adicionar</a>
+    </div>
+    <h1 class="display-4">Planos</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Plano</th>
+                <th scope="col">Cortes</th>
+                <th scope="col"> Barbas</th>
+                <th scope="col">Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(Model != null && Model.Any()){
+                foreach(PlanoModel plan in Model){
+            <tr>
+                <td>@plan.Plano</td>
+                <td>@plan.Cortes</td>
+                <td>@plan.Barbas</td>
+                <td>@plan.Valor</td>
+                <td>
+                  <div>
+                      <a role="button" class="btn btn-success" asp-controller="Plano" asp-action="Edit">Editar</a>
+                      <a role="button" class="btn btn-danger" asp-controller="Plano" asp-action="Delete">Excluir</a>
+                  </div>
+                </td>
+            </tr>
+              }
+            }
+           
+        </tbody>
+    </table>
